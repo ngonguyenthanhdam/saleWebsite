@@ -307,7 +307,7 @@ body {
 }
 
 .nav-item i {
-    width: 20px;
+    width: 12px;
     margin-right: 12px;
 }
 
@@ -956,7 +956,7 @@ body {
 
     .nav-item {
         white-space: nowrap;
-        padding: 10px 20px;
+        padding: 100px 20px;
     }
 }
 

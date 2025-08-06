@@ -105,7 +105,7 @@ function handleRegister() {
             
             // Redirect to login page after delay
             setTimeout(() => {
-                window.location.href = 'login.html';
+                window.location.href = 'index.html';
             }, 2000);
         } else {
             showMessage('Có lỗi xảy ra! Vui lòng thử lại.', 'error');
