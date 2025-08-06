@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register- PhoneStore</title>
+    <link rel="stylesheet" href="../Css/register.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="register-container">
+        <!-- Logo góc trái trên cùng, nhỏ gọn, màu dễ nhìn -->
+        <div class="position-absolute top-0 start-0 p-3">
+            <a href="Trangchu.html" class="d-flex align-items-center text-decoration-none">
+                <span class="bg-white text-primary border border-2 border-primary rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 38px; height: 38px; font-size: 1.5rem;"><i class="fas fa-microchip"></i></span>
+                <span class="fw-bold fs-5 text-dark">PhoneStore</span>
+                </a>
+            </div>
+
+        <!-- Main Content -->
+        <main class="register-main">
+            <div class="register-wrapper">
+                <!-- Register Form -->
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>Create New Account</h2>
+                        <p>Register to enjoy the best shopping experience at PhoneStore</p>
+                    </div>
+                    
+                    <form class="register-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <input type="text" id="address" name="address" placeholder="Enter your address" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-city"></i>
+                                    <select id="city" name="city" required>
+                                        <option value="">Select City</option>
+                                        <option value="hcm">Ho Chi Minh City</option>
+                                        <option value="hanoi">Hanoi</option>
+                                        <option value="danang">Da Nang</option>
+                                        <option value="cantho">Can Tho</option>
+                                        <option value="haiphong">Hai Phong</option>
+                                        <option value="nhatrang">Nha Trang</option>
+                                        <option value="dalat">Da Lat</option>
+                                        <option value="vungtau">Vung Tau</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="district">District</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-map"></i>
+                                    <input type="text" id="district" name="district" placeholder="Enter your district" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="password" name="password" placeholder="Create a password" required>
+                                <button type="button" class="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength">
+                                <div class="strength-bar">
+                                    <div class="strength-fill" id="strengthFill"></div>
+                                </div>
+                                <span class="strength-text" id="strengthText">Password Strength</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                                <button type="button" class="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthDate">Birth Date</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-calendar"></i>
+                                <input type="date" id="birthDate" name="birthDate" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" id="agree" name="agree" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn-register">
+                            <span>Create Account</span>
+                            <i class="fas fa-user-plus"></i>
+                        </button>
+                    </form>
+                    
+                    <div class="divider">
+                        <span>hoặc</span>
+                    </div>
+                    
+                    <div class="social-register">
+                        <button class="social-btn google">
+                            <i class="fab fa-google"></i>
+                            <span>Register Google</span>
+                        </button>
+                        <button class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Register with Facebook</span>
+                        </button>
+                    </div>
+                    <div class="form-footer">
+                        <p>By registering, you agree to our <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a>.</p>
+                    </div>
+                    <div class="form-footer">
+                        <p>Already have an account?<a href="login.html">Login Now</a></p>
+                    </div>
+                </div>
+
+                <!-- Background Image -->
+                <div class="register-bg">
+                    <div class="bg-overlay">
+                        <div class="bg-content">
+                            <h3>Join the Community PhoneStore</h3>
+                            <p>Experience amazing technology shopping with exclusive offers</p>
+                            <div class="benefits">
+                                <div class="benefit">
+                                    <i class="fas fa-gift"></i>
+                                    <div>
+                                        <h4>Exclusive Offers</h4>
+                                        <p>Be the first to know about promotions</p>
+                                    </div>
+                                </div>
+                                <div class="benefit">
+                                    <i class="fas fa-shipping-fast"></i>
+                                    <div>
+                                        <h4>Free Ship</h4>
+                                        <p>Free ship for orders over 500k</p>
+                                    </div>
+                                </div>
+                                <div class="benefit">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <div>
+                                        <h4>Official Warranty</h4>
+                                        <p>Official warranty with the best after-sales service</p>
+                                    </div>
+                                </div>
+                                <div class="benefit">
+                                    <i class="fas fa-headset"></i>
+                                    <div>
+                                        <h4>24/7 Support</h4>
+                                        <p>Professional customer support team</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div class="message-container" id="messageContainer"></div>
+
+    <footer class="footer bg-dark text-light mt-5 pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h3 class="mb-3"><i class="fas fa-microchip me-2"></i> PhoneStore</h3>
+                    <p>PhoneStore is a reputable electronics store delivering top-quality products at affordable prices. We are dedicated to bringing the best to our customers.</p>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Categories</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Phones</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Laptops</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Accessories</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">TV & Audio</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Help Center</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Warranty Policy</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Shopping Guide</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact Us</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Information</h5>
+                    <div class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> QTSC 9 Building, Đ. Tô Ký, Tân Chánh Hiệp, Quận 12, Hồ Chí Minh, Việt Nam</div>
+                    <div class="mb-2"><i class="fas fa-phone me-2"></i> 1900-1234</div>
+                    <div><i class="fas fa-envelope me-2"></i> info@phonestore.vn</div>
+                </div>
+            </div>
+            <div class="text-center mt-4 text-secondary small">
+                &copy; 2024 PhoneStore. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../JS/register.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

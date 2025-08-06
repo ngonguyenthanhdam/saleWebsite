@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - PhoneStore</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/lienhe.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <!--
+        Trang liên hệ TechStore
+        - Hiển thị form liên hệ, thông tin liên hệ, bản đồ, câu hỏi thường gặp, footer
+        - Giao diện hiện đại, màu chủ đạo #2563eb, font Inter
+    -->
+    <!-- Header: Thanh điều hướng chính, logo, menu, tìm kiếm, tài khoản, giỏ hàng -->
+    <header class="header bg-white shadow-sm fixed-top py-2 border-bottom rounded-bottom-4" style="z-index: 1040;">
+        <div class="container">
+            <div class="row align-items-center flex-nowrap">
+                <div class="col-auto d-flex align-items-center gap-2 pe-0">
+                    <a href="Trangchu.html" class="d-flex align-items-center text-decoration-none">
+                        <span class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 44px; height: 44px; font-size: 2rem;"><i class="fas fa-mobile-alt"></i></span>
+                        <span class="fw-bold fs-4 text-primary">PhoneShop</span>
+                    </a>
+                </div>
+                <div class="col d-flex align-items-center ps-0 gap-3">
+                    <nav class="flex-shrink-0">
+                        <ul class="nav">
+                            <li class="nav-item"><a href="Trangchu.html" class="nav-link fw-semibold text-primary">Home</a></li>
+                            <li class="nav-item"><a href="user.html" class="nav-link fw-semibold text-dark">Account</a></li>
+                            <li class="nav-item"><a href="lienhe.html" class="nav-link fw-semibold text-primary active">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                    <form class="d-flex flex-grow-1 flex-lg-grow-0 me-2" style="min-width: 220px; max-width: 350px;">
+                        <input class="form-control rounded-pill me-2 border-primary flex-grow-1" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+                        <button class="btn btn-primary rounded-circle" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="col-auto d-flex align-items-center justify-content-end gap-2 ms-auto">
+                    <div class="dropdown">
+                        <a href="#" class="btn btn-light rounded-circle border position-relative" id="userBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user text-primary"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="userBtn">
+                            <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-in-alt me-2"></i>Login</a></li>
+                            <li><a class="dropdown-item" href="register.html"><i class="fas fa-user-plus me-2"></i>Register</a></li>
+                            <li><hr class="dropdown-divider"></li>
+
+                            <li><a class="dropdown-item text-danger" href="#" onclick="logout()"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </div>
+                    <a href="sanphamyeuthich.html" class="btn btn-light rounded-circle border position-relative">
+                        <i class="fas fa-heart text-danger"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger wishlist-count">0</span>
+                    </a>
+                    <a href="giohang.html" class="btn btn-light rounded-circle border position-relative">
+                        <i class="fas fa-shopping-cart text-primary"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-header">
+                    <h1>Contact Us</h1>
+                    <p>We are always ready to assist you 24/7. Please contact us if you have any questions about our products or services.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form">
+                        <h2><i class="fas fa-envelope"></i> Send a Message</h2>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select Subject</option>
+                                    <option value="general">General Information</option>
+                                    <option value="product">Product Inquiry</option>
+                                    <option value="order">Order Inquiry</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="complaint">Complaint</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message Content *</label>
+                                <textarea id="message" name="message" placeholder="Please describe your issue in detail..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info-section">
+                        <div class="contact-card">
+                            <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+                            <p>123 ABC Street, District 1</p>
+                            <p>Ho Chi Minh City, Vietnam</p>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3><i class="fas fa-phone"></i> Phone</h3>
+                            <p><a href="tel:+84123456789">+84 123 456 789</a></p>
+                            <p><a href="tel:+84987654321">+84 987 654 321</a></p>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3><i class="fas fa-envelope"></i> Email</h3>
+                            <p><a href="mailto:info@techzone.com">info@phone.com</a></p>
+                            <p><a href="mailto:support@techzone.com">support@phone.com</a></p>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3><i class="fas fa-clock"></i> Opening Hours </h3>
+                            <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                            <p>Saturday: 8:00 AM - 12:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3><i class="fas fa-share-alt"></i> Social Media</h3>
+                            <p>
+                                <a href="#" style="margin-right: 15px;"><i class="fab fa-facebook"></i> Facebook</a>
+                                <a href="#" style="margin-right: 15px;"><i class="fab fa-instagram"></i> Instagram</a>
+                                <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="container">
+                <h2><i class="fas fa-map"></i> Our Location</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.424098981303!2d106.6983153148008!3d10.776888992319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f46f64b933f%3A0xf8a6e5b2a5a4f1f4!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiB2aWV0!5e0!3m2!1svi!2s!4v1629789456789!5m2!1svi!2s" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How to place an order online?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can place an order online by: 1) Selecting a product from the catalog, 2) Adding it to the cart, 3) Filling in the shipping information, 4) Choosing the payment method and confirming the order.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How long does the delivery take?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Delivery time is 1-3 working days within Ho Chi Minh City, 3-5 days for neighboring provinces, and 5-7 days for remote provinces.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Is there a return policy?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we have a return policy within 30 days from the date of purchase, provided that the product is intact and all accessories are included.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What is the product warranty policy?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>All products come with a manufacturer's warranty ranging from 12 to 24 months depending on the type of product. You can bring the product to the warranty center or contact the hotline for assistance.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Is there a payment installment option?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer 0% interest installment payment through credit cards from partner banks. You can choose to pay in installments of 3, 6, 12, or 24 months.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light mt-5 pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h3 class="mb-3"><i class="fas fa-mobile-alt me-2"></i> PhoneShop</h3>
+                    <p>A reputable mobile phone store providing top-quality products at affordable prices. We are dedicated to bringing the best value to our customers.</p>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Danh mục</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Điện thoại</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">iPhone</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Samsung</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Xiaomi</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Oppo</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>Hỗ trợ</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Help Center</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Warranty Policy</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Shopping Guide</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact Us</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Thông tin liên hệ</h5>
+                    <div class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> QTSC 9 Building, Đ. Tô Ký, Tân Chánh Hiệp, Quận 12, Hồ Chí Minh, Việt Nam</div>
+                    <div class="mb-2"><i class="fas fa-phone me-2"></i> 1900-1234</div>
+                    <div><i class="fas fa-envelope me-2"></i> info@phoneshop.vn</div>
+                </div>
+            </div>
+            <div class="text-center mt-4 text-secondary small">
+                &copy; 2024 PhoneShop. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

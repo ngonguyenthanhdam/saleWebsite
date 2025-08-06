@@ -1,0 +1,233 @@
+/* Reset CSS: Đặt lại margin, padding, box-sizing cho toàn bộ trang */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Thiết lập font chữ chính cho toàn bộ website */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333; /* Màu chữ mặc định */
+    background-color: #f8f9fa; /* Nền xám nhạt */
+}
+
+/* Container: căn giữa và giới hạn chiều rộng nội dung */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ================= HEADER ================= */
+/* Header: Thanh điều hướng cố định trên cùng, nền trắng, bóng đổ nhẹ */
+.header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+/* Logo: Sử dụng màu chủ đạo xanh dương */
+.logo h1 {
+    color: #2563eb; /* Màu chủ đạo */
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Menu điều hướng ngang */
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+/* Hiệu ứng hover và active cho menu: đổi sang màu chủ đạo */
+.nav-link:hover,
+.nav-link.active {
+    color: #2563eb;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #2563eb; /* Gạch chân màu chủ đạo */
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Ô tìm kiếm bo tròn, nền xám nhạt */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #f1f5f9;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e2e8f0;
+}
+
+.search-box input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 200px;
+    font-size: 0.9rem;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    color: #64748b; /* Màu icon tìm kiếm */
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+.user-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* ================= BUTTON ================= */
+/* Nút bấm outline xanh: viền xanh, nền trắng, hover nền xanh chữ trắng */
+.btn-outline {
+    border: 2px solid #2563eb; /* Viền xanh chủ đạo */
+    color: #2563eb; /* Chữ xanh chủ đạo */
+    background: #fff; /* Nền trắng */
+    transition: all 0.3s;
+}
+.btn-outline:hover {
+    background: #2563eb; /* Hover: nền xanh */
+    color: #fff; /* Hover: chữ trắng */
+}
+
+/* =================== CÁC PHẦN KHÁC =================== */
+/* Các phần layout, card, grid, ... sẽ được chú thích tương tự nếu cần */
+
+/* User Dropdown */
+.user-dropdown {
+    position: relative;
+}
+.user-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: #64748b;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+.user-btn:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    margin-top: 0.5rem;
+    padding: 1rem 0.5rem;
+    display: block;
+}
+.user-dropdown:hover .dropdown-menu,
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    display: block;
+}
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: #374151;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+.dropdown-item:hover {
+    background: #f8fafc;
+    color: #2563eb;
+}
+.dropdown-item i {
+    width: 16px;
+    color: #64748b;
+}
+.dropdown-item:hover i {
+    color: #2563eb;
+}
+.icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: #64748b;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+.icon-btn:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+}
+.cart-count, .wishlist-count {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: #ef4444;
+    color: #fff;
+    font-size: 0.75rem;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
