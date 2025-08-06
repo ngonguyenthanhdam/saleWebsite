@@ -9,7 +9,7 @@ const productDatabase = {
         price: 29990000,
         oldPrice: 32990000,
         category: "Điện thoại",
-        image: "../Img/iphone-15.jpg"
+        image: "Img/iphone-15.jpg"
     },
     2: {
         id: 2,
@@ -17,7 +17,7 @@ const productDatabase = {
         price: 24990000,
         oldPrice: 27990000,
         category: "Điện thoại",
-        image: "../Img/samsung-s23.jpg"
+        image: "Img/samsung-s23.jpg"
     },
     3: {
         id: 3,
@@ -25,7 +25,7 @@ const productDatabase = {
         price: 18990000,
         oldPrice: 20990000,
         category: "Điện thoại",
-        image: "../Img/xiaomi-13pro.jpg"
+        image: "Img/xiaomi-13pro.jpg"
     }
 };
 
