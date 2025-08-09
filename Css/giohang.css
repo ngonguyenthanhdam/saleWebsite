@@ -887,4 +887,12 @@ body {
 .feature i {
     font-size: 20px;
     color: #fbbf24;
-} 
+}
+
+.cart-item .product-info img,
+.cart-item .item-image img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}

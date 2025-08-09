@@ -3,30 +3,14 @@
 // ================== DỮ LIỆU SẢN PHẨM MẪU ==================
 // Mô phỏng cơ sở dữ liệu sản phẩm (dùng cho giao diện demo)
 const productDatabase = {
-    1: {
-        id: 1,
-        name: "iPhone 15 Pro Max",
-        price: 29990000,
-        oldPrice: 32990000,
-        category: "Điện thoại",
-        image: "Img/iphone-15.jpg"
-    },
-    2: {
-        id: 2,
-        name: "Samsung Galaxy S23 Ultra",
-        price: 24990000,
-        oldPrice: 27990000,
-        category: "Điện thoại",
-        image: "Img/samsung-s23.jpg"
-    },
-    3: {
-        id: 3,
-        name: "Xiaomi 13 Pro",
-        price: 18990000,
-        oldPrice: 20990000,
-        category: "Điện thoại",
-        image: "Img/xiaomi-13pro.jpg"
-    }
+    1: { id: 1, name: "iPhone 15 Pro Max", price: 29990000, image: "Img/iphone-15.jpg" },
+    2: { id: 2, name: "Samsung Galaxy S23 Ultra", price: 24990000, image: "Img/samsung-s23.jpg" },
+    3: { id: 3, name: "Xiaomi 13 Pro", price: 18990000, image: "Img/xiaomi-13pro.jpg" },
+    4: { id: 4, name: "Oppo Reno 10", price: 12990000, image: "Img/oppo.jpg" },
+    5: { id: 5, name: "Vivo V29", price: 9990000, image: "Img/vivo.jpg" },
+    6: { id: 6, name: "Realme 11 Pro+", price: 8990000, image: "Img/realme.jpg" },
+    7: { id: 7, name: "Nokia G22", price: 4990000, image: "Img/nokia.jpg" },
+    8: { id: 8, name: "Asus ROG Phone 7", price: 19990000, image: "Img/asus.jpg" }
 };
 
 // ================== DỮ LIỆU GIỎ HÀNG & YÊU THÍCH ==================
@@ -187,6 +171,32 @@ function addToCart(productId) {
     // Thông báo thành công
     showNotification('Đã thêm sản phẩm vào giỏ hàng!', 'success');
 }
+
+// Ghi đè addToCart để luôn lấy đủ thông tin sản phẩm
+window.addToCart = function(id) {
+    const product = productDatabase[id];
+    if (!product) {
+        alert("Sản phẩm không tồn tại!");
+        return;
+    }
+    // Gọi đúng hàm addToCart của giohang.js nếu có
+    if (typeof window.addToCartFromCartPage === 'function') {
+        window.addToCartFromCartPage(product.id, product.name, product.price, product.image);
+    } else if (typeof window.addToCart === 'function' && window.addToCart.length === 4) {
+        window.addToCart(product.id, product.name, product.price, product.image);
+    } else {
+        // Nếu không có, tự lưu vào localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingItem = cart.find(item => item.id == product.id);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({ ...product, quantity: 1 });
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`Đã thêm ${product.name} vào giỏ hàng!`);
+    }
+};
 
 // ================== XỬ LÝ YÊU THÍCH ==================
 // Thêm/xóa sản phẩm khỏi danh sách yêu thích
@@ -359,4 +369,4 @@ async function saveWishlistToBackend() {
         console.error('Error saving wishlist:', error);
         return { success: false, error: error.message };
     }
-} 
+}
